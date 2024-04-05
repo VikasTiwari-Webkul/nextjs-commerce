@@ -14,7 +14,7 @@ Demo live at: [Bagisto Store](https://bagisto-commerce.vercel.app/)
 - UI Components
 - Theming
 - Standardized Data Hooks
-- Integrations - Integrate seamlessly with the most common ecommerce platforms.
+- Integrations - Integrate seamlessly with the most common ecommerce platforms
 - Dark Mode Support
 
 ## Configuration

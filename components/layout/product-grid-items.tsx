@@ -18,7 +18,7 @@ export default function ProductGridItems({ products }: { products: Product[] }) 
               src={product?.images?.[0]?.url as any}
               fill
               sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
-              onError={(e) => (e.currentTarget.src = '/image/placeholder.webp')}
+              // onError={(e) => (e.currentTarget.src = '/image/placeholder.webp')}
             />
           </Link>
         </Grid.Item>

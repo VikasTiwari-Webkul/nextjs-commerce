@@ -1,10 +1,9 @@
-import './globals.css';
 import { GeistSans } from 'geist/font';
 import { getChannel } from 'lib/bagisto';
 import { ensureStartsWith, getBaseUrl } from 'lib/utils';
 import { ReactNode } from 'react';
 import { GlobalContextProvider } from './context/store';
-import NextAuthProvider from './next-auth-provider';
+import './globals.css';
 import { Providers } from './providers';
 export const dynamic = 'force-dynamic';
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
@@ -45,9 +44,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       >
         <main>
           <Providers>
-            <GlobalContextProvider>
-              <NextAuthProvider> {children} </NextAuthProvider>{' '}
-            </GlobalContextProvider>
+            <GlobalContextProvider>{children}</GlobalContextProvider>
           </Providers>
         </main>
       </body>

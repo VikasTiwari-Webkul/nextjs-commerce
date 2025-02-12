@@ -1,12 +1,12 @@
-import dynamic from 'next/dynamic';
 import { getMenu } from 'lib/bagisto';
 import { Menu } from 'lib/bagisto/types';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { Suspense } from 'react';
-import  { SearchSkeleton } from './search';
+import { SearchSkeleton } from './search';
 const Cart = dynamic(() => import('components/cart'), { ssr: false });
 const OpenCart = dynamic(() => import('components/cart/open-cart'), { ssr: false });
-const UserAccount = dynamic(() => import('components/customer'), { ssr: false });
+
 const LogoSquare = dynamic(() => import('components/logo-square'), { ssr: false });
 const Search = dynamic(() => import('./search'), { ssr: false, loading: () => <SearchSkeleton /> });
 const MobileMenu = dynamic(() => import('./mobile-menu'), { ssr: false });
@@ -52,9 +52,6 @@ export default async function Navbar() {
         <div className="flex justify-end gap-4 md:w-1/3">
           <Suspense fallback={<OpenCart />}>
             <Cart />
-          </Suspense>
-          <Suspense fallback={<OpenCart />}>
-            <UserAccount />
           </Suspense>
         </div>
       </div>
